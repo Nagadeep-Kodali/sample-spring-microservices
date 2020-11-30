@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: 'service_name: account-service\ncustomer-service\ndiscovery-service\ngateway-service\nzipkin-service', description: 'Select service_name to build', name: 'service_name')])])
+properties([parameters([choice(choices: '$service_name: account-service\ncustomer-service\ndiscovery-service\ngateway-service\nzipkin-service', description: 'Select service_name to build', name: 'service_name')])])
 
 pipeline {
 agent {
@@ -17,11 +17,11 @@ steps
     }
     
 }
-stage ('Build1') 
+stage ('Build $service_name') 
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/myproject/service_name ; mvn clean install " 
+       sh "cd /home/ubuntu/workspace/myproject/$service_name ; mvn clean install " 
     }
 }
  
