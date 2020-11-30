@@ -17,7 +17,7 @@ steps
     }
     
 }
-stage ('Build service_name') 
+stage ('Build') 
 {
     steps
     {
