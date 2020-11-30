@@ -19,7 +19,7 @@ stage ('Build1')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/28thJava/account-service ; mvn clean install " 
+       sh "cd /home/ubuntu/workspace/28thJava/service_name ; mvn clean install " 
     }
 }
  
