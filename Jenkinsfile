@@ -1,3 +1,5 @@
+properties([parameters([choice(choices: 'service_name: account-service\ncustomer-service\ndiscovery-service\ngateway-service\nzipkin-service', description: 'Select service_name to build', name: 'service_name')])])
+
 pipeline {
 agent {
 label '24th November'
@@ -19,7 +21,7 @@ stage ('Build1')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/28thJava/service_name ; mvn clean install " 
+       sh "cd /home/ubuntu/workspace/myproject/service_name ; mvn clean install " 
     }
 }
  
