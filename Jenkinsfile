@@ -22,7 +22,14 @@ stage ('Build1')
        sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; mvn clean install " 
     }
 }
- 
+    stage {'dockerbuild'}
+{
+    steps
+    {
+       sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; sudo docker build -t account-service . " 
+    }
 }
     
+}
+
 }
