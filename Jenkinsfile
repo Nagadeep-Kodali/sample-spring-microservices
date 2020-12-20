@@ -29,7 +29,13 @@ stage ('Build1')
        sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; sudo docker build -t account-service . " 
     }
 }
-    
+     stage ('dockerimagepush')
+{ 
+     steps
+      {
+          sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; docker login -unaga54 -pKodali@89 "
+      }
+}
 }
 
 }
