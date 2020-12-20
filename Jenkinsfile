@@ -49,3 +49,4 @@ stage ('k8sdeployment')
 }
 }
 }
+}
