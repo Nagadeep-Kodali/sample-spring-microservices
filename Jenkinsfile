@@ -33,7 +33,9 @@ stage ('Build1')
 { 
      steps
       {
-          sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; docker login -unaga54 -pKodali@89 "
+          sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; sudo docker login -unaga54 -pKodali@89 "
+          sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; sudo docker tag account-service naga54/account-service "
+          sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; sudo docker push naga54/account-service "
       }
 }
 }
