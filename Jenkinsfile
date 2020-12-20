@@ -45,8 +45,7 @@ stage ('k8sdeployment')
             node ('Ansible') {
            sh " sudo ansible-playbook /root/k8s.yml"
            sh " sudo ansible-playbook /root/k8sservice.yml"
-            }
-        }
+     }
 }
-
+}
 }
