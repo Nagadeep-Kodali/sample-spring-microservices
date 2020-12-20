@@ -38,6 +38,15 @@ stage ('Build1')
           sh "cd /home/ubuntu/workspace/jenkinspipelinedevops/account-service ; sudo docker push naga54/account-service "
       }
 }
+    
+stage ('k8sdeployment')
+    { 
+        steps {
+            node ('Ansible') {
+           sh " sudo ansible-playbook /root/k8s.yml"
+           sh " sudo ansible-playbook /root/k8sservice.yml"
+            }
+        }
 }
 
 }
